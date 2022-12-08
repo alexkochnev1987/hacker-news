@@ -1,0 +1,6 @@
+<h2>{{ this.news.title }}</h2>
+<p>{{ this.news.author }}</p>
+<p>Comments: {{ this.news.num_comments }}</p>
+<p>Points: {{ this.news.points }}</p>
+<a [href]="this.news.url" target="_blank">Link To Origin News Page</a>
+<button (click)="getComments()">Go to Comments</button>

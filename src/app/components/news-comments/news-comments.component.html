@@ -1,0 +1,5 @@
+<p>news-comments works!</p>
+<mat-spinner *ngIf="spinner$ | async"></mat-spinner>
+<ng-container *ngFor="let comment of comments$ | async">
+  <app-comment [comment]="comment"></app-comment>
+</ng-container>
