@@ -1,3 +1,10 @@
-<button (click)="goBack()">Back</button>
-<p>{{ comment.author }}</p>
-<p>{{ comment.comment_text }}</p>
+<section class="section">
+  <p><mat-icon>account_circle</mat-icon>{{ comment.author }}</p>
+  <p>{{ comment.comment_text }}</p>
+  <div *ngFor="let child of getChildren(comment.objectID)" class="child">
+    <p><mat-icon>account_circle</mat-icon>{{ child.author }}</p>
+    <p>{{ child.comment_text }}</p>
+    <br />
+    <app-comment [tree]="tree" [comment]="child"></app-comment>
+  </div>
+</section>

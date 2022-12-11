@@ -1,7 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { News } from 'src/app/news';
-import { HttpService } from 'src/app/services/http.service';
 
 @Component({
   selector: 'app-news',

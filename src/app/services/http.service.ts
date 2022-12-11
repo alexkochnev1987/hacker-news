@@ -1,25 +1,31 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { API_COMMENT, API_URL } from '../constatnts';
+import { API_COMMENT, API_STORY, API_URL } from '../constatnts';
 import { GetNews, News } from '../news';
-import { map } from 'rxjs';
+import { map, tap } from 'rxjs';
 import { SpinnerService } from './spinner.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class HttpService {
-  constructor(
-    private http: HttpClient,
-    private spinnerService: SpinnerService
-  ) {}
+  constructor(private http: HttpClient) {}
+
   getNews() {
-    this.spinnerService.showSpinner();
-    return this.http.get<GetNews>(API_URL).pipe(map((e) => e.hits));
+    return this.http.get<GetNews>(API_URL);
+  }
+
+  genNewsByHitsPerPage(page: number, hits: number) {
+    return this.http
+      .get<GetNews>(API_URL + `&page=${page}&hitsPerPage=${hits}`)
+      .pipe(map((x) => x.hits));
   }
 
   getComments(story: string) {
-    this.spinnerService.showSpinner();
-    return this.http.get<GetNews>(API_COMMENT + story).pipe(map((e) => e.hits));
+    return this.http.get<GetNews>(API_COMMENT + story);
+  }
+
+  getStory(id: string) {
+    return this.http.get<GetNews>(API_STORY + id + '&hitsPerPage=1000');
   }
 }

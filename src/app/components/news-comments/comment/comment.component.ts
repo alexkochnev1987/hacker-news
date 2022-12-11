@@ -1,5 +1,4 @@
-import { Location } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { News } from 'src/app/news';
 
 @Component({
@@ -8,10 +7,12 @@ import { News } from 'src/app/news';
   styleUrls: ['./comment.component.scss'],
 })
 export class CommentComponent {
+  @Input() tree!: News[];
   @Input() comment!: News;
-  constructor(private location: Location) {}
+  constructor() {}
 
-  goBack() {
-    this.location.back();
+  getChildren(objectID: string) {
+    const children = this.tree.filter((x) => x.parent_id === Number(objectID));
+    return children;
   }
 }
