@@ -8,15 +8,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent {
-  constructor(private location: Location, private router: Router) {}
-
-  goBack() {
-    this.location.back();
-  }
-
-  goForward() {
-    this.location.forward();
-  }
+  constructor(private router: Router) {}
 
   goMain() {
     this.router.navigate(['/']);

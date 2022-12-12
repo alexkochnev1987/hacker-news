@@ -1,10 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { News } from 'src/app/news';
-import { HttpService } from 'src/app/services/http.service';
-
-export interface Comments extends News {
-  children?: Comments[];
-}
 
 @Component({
   selector: 'app-tree',

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { HttpService } from 'src/app/services/http.service';
 import { PageEvent } from '@angular/material/paginator';
 import { map, Observable, of, tap } from 'rxjs';
