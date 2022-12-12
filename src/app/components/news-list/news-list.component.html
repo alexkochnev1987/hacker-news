@@ -1,0 +1,23 @@
+<mat-paginator
+  (page)="handlePageEvent($event)"
+  [length]="(length$ | async) || 50"
+  [pageSize]="20"
+  [pageSizeOptions]="[5, 10, 25, 100]"
+  aria-label="Select page"
+>
+</mat-paginator>
+<div class="wrapper">
+  <section class="section" *ngFor="let news of news$ | async; index as index">
+    <h3>{{ index + 1 + pageIndex * pageSize }}.</h3>
+    <app-news [news]="news"></app-news>
+  </section>
+</div>
+
+<mat-paginator
+  (page)="handlePageEvent($event)"
+  [length]="(length$ | async) || 50"
+  [pageSize]="10"
+  [pageSizeOptions]="[5, 10, 25, 100]"
+  aria-label="Select page"
+>
+</mat-paginator>

@@ -1,0 +1,8 @@
+<p class="item"><mat-icon>account_circle</mat-icon>{{ main?.author }}</p>
+<h2>{{ main?.title }}</h2>
+<p>{{ main?.story_text }}</p>
+<ng-container *ngFor="let comment of comments; index as index">
+  <ng-container *ngIf="index > 0">
+    <app-comment [tree]="tree" [comment]="comment"></app-comment>
+  </ng-container>
+</ng-container>

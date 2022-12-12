@@ -1,0 +1,19 @@
+<h2>{{ this.news.title }}</h2>
+<section class="section">
+  <span class="item"
+    ><mat-icon>comment</mat-icon> {{ this.news.num_comments || 0 }}</span
+  >
+  <span class="item">
+    <mat-icon>favorite</mat-icon>
+    {{ this.news.points || 0 }}
+  </span>
+  <span class="item"
+    ><mat-icon>account_circle</mat-icon>{{ this.news.author }}</span
+  >
+  <a [href]="this.news.url" target="_blank" class="item"
+    ><mat-icon>link</mat-icon></a
+  >
+  <button mat-raised-button color="primary" (click)="getComments()">
+    Go to comments
+  </button>
+</section>

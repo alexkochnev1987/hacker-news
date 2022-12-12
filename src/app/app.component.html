@@ -1,1 +1,9 @@
-<h1>{{ title }}</h1>
+<div class="header">
+  <app-header></app-header>
+</div>
+<div class="loading-container" *ngIf="isLoading$ | async">
+  <mat-spinner></mat-spinner>
+</div>
+<div class="body">
+  <router-outlet></router-outlet>
+</div>

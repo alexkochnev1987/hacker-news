@@ -1,0 +1,12 @@
+.section {
+  margin: 5px;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  border: 2px solid black;
+  gap: 10px;
+}
+
+.wrapper {
+  min-height: 90vh;
+}
