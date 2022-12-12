@@ -1,9 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { API_COMMENT, API_STORY, API_URL } from '../constatnts';
-import { GetNews, News } from '../news';
+import { GetNews } from '../news';
 import { map, tap } from 'rxjs';
-import { SpinnerService } from './spinner.service';
 
 @Injectable({
   providedIn: 'root',

@@ -10,9 +10,8 @@ export class CommentComponent {
   @Input() tree!: News[];
   @Input() comment!: News;
   constructor() {}
-
-  getChildren(objectID: string) {
-    const children = this.tree.filter((x) => x.parent_id === Number(objectID));
-    return children;
+  getChildren() {
+    const parentID = Number(this.comment.objectID);
+    return this.tree.filter((x) => x.parent_id === parentID);
   }
 }

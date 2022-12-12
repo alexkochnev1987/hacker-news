@@ -1,10 +1,7 @@
 <section class="section">
-  <p><mat-icon>account_circle</mat-icon>{{ comment.author }}</p>
+  <p class="item"><mat-icon>account_circle</mat-icon>{{ comment.author }}</p>
   <p>{{ comment.comment_text }}</p>
-  <div *ngFor="let child of getChildren(comment.objectID)" class="child">
-    <p><mat-icon>account_circle</mat-icon>{{ child.author }}</p>
-    <p>{{ child.comment_text }}</p>
-    <br />
+  <div *ngFor="let child of getChildren()" class="child">
     <app-comment [tree]="tree" [comment]="child"></app-comment>
   </div>
 </section>

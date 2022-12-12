@@ -15,11 +15,10 @@ export class TreeComponent implements OnInit {
   @Input() tree!: News[];
   comments?: News[];
   main?: News;
-  constructor(private httpService: HttpService) {}
+  constructor() {}
 
   ngOnInit(): void {
     this.main = this.tree[0];
-
     this.comments = this.tree.filter(
       (x) => x.parent_id && x.parent_id === x.story_id
     );
